@@ -16,12 +16,14 @@ public class Car implements Comparable<Car> {
     private AutoPilot autoPilot;
     private List<Brake> brakes;
     private Chassis chassis;
-    private Engine engine;
+    private List<Engine> engines;
     private List<Seat> seats;
     private List<Sensor> sensors;
     private SteeringWheel steeringWheel;
     private SunRoof sunRoof;
     private List<Wheel> wheels;
+
+    private Double range;
 
     public Car() {
         parts = new HashMap<>();
@@ -37,7 +39,7 @@ public class Car implements Comparable<Car> {
 
     public void setAirConditioning(AirConditioning airConditioning) {
         this.airConditioning = airConditioning;
-        parts.put(Parts.AIR_CONDITIONING, List.of(airConditioning));
+        parts.put(Parts.AIR_CONDITIONING, List.of(this.airConditioning));
     }
 
     public AllWheelDrive getAllWheelDrive() {
@@ -46,7 +48,7 @@ public class Car implements Comparable<Car> {
 
     public void setAllWheelDrive(AllWheelDrive allWheelDrive) {
         this.allWheelDrive = allWheelDrive;
-        parts.put(Parts.ALL_WHEEL_DRIVE, List.of(allWheelDrive));
+        parts.put(Parts.ALL_WHEEL_DRIVE, List.of(this.allWheelDrive));
     }
 
     public AutoPilot getAutoPilot() {
@@ -55,7 +57,7 @@ public class Car implements Comparable<Car> {
 
     public void setAutoPilot(AutoPilot autoPilot) {
         this.autoPilot = autoPilot;
-        parts.put(Parts.AUTO_PILOT, List.of(autoPilot));
+        parts.put(Parts.AUTO_PILOT, List.of(this.autoPilot));
     }
 
     public List<Brake> getBrakes() {
@@ -64,7 +66,7 @@ public class Car implements Comparable<Car> {
 
     public void setBrakes(List<Brake> brakes) {
         this.brakes = brakes;
-        parts.put(Parts.BRAKE, brakes.stream().map(x -> new Part(x)).collect(Collectors.toList()));
+        parts.put(Parts.BRAKE, this.brakes.stream().map(x -> new Part(x)).collect(Collectors.toList()));
     }
 
     public Chassis getChassis() {
@@ -73,16 +75,16 @@ public class Car implements Comparable<Car> {
 
     public void setChassis(Chassis chassis) {
         this.chassis = chassis;
-        parts.put(Parts.CHASSIS, List.of(chassis));
+        parts.put(Parts.CHASSIS, List.of(this.chassis));
     }
 
-    public Engine getEngine() {
-        return engine;
+    public List<Engine> getEngines() {
+        return engines;
     }
 
-    public void setEngine(Engine engine) {
-        this.engine = engine;
-        parts.put(Parts.ENGINE, List.of(engine));
+    public void setEngines(List<Engine> engines) {
+        this.engines = engines;
+        parts.put(Parts.ENGINE, this.engines.stream().map(x -> new Part(x)).collect(Collectors.toList()));
     }
 
     public List<Seat> getSeats() {
@@ -91,7 +93,7 @@ public class Car implements Comparable<Car> {
 
     public void setSeats(List<Seat> seats) {
         this.seats = seats;
-        parts.put(Parts.SEAT, seats.stream().map(x -> new Part(x)).collect(Collectors.toList()));
+        parts.put(Parts.SEAT, this.seats.stream().map(x -> new Part(x)).collect(Collectors.toList()));
     }
 
     public List<Sensor> getSensors() {
@@ -100,7 +102,7 @@ public class Car implements Comparable<Car> {
 
     public void setSensors(List<Sensor> sensors) {
         this.sensors = sensors;
-        parts.put(Parts.SENSOR, sensors.stream().map(x -> new Part(x)).collect(Collectors.toList()));
+        parts.put(Parts.SENSOR, this.sensors.stream().map(x -> new Part(x)).collect(Collectors.toList()));
     }
 
     public SteeringWheel getSteeringWheel() {
@@ -109,7 +111,7 @@ public class Car implements Comparable<Car> {
 
     public void setSteeringWheel(SteeringWheel steeringWheel) {
         this.steeringWheel = steeringWheel;
-        parts.put(Parts.STEERING_WHEEL, List.of(steeringWheel));
+        parts.put(Parts.STEERING_WHEEL, List.of(this.steeringWheel));
     }
 
     public SunRoof getSunRoof() {
@@ -118,7 +120,7 @@ public class Car implements Comparable<Car> {
 
     public void setSunRoof(SunRoof sunRoof) {
         this.sunRoof = sunRoof;
-        parts.put(Parts.SUN_ROOF, List.of(sunRoof));
+        parts.put(Parts.SUN_ROOF, List.of(this.sunRoof));
     }
 
     public List<Wheel> getWheels() {
@@ -127,7 +129,15 @@ public class Car implements Comparable<Car> {
 
     public void setWheels(List<Wheel> wheels) {
         this.wheels = wheels;
-        parts.put(Parts.WHEEL, wheels.stream().map(x -> new Part(x)).collect(Collectors.toList()));
+        parts.put(Parts.WHEEL, this.wheels.stream().map(x -> new Part(x)).collect(Collectors.toList()));
+    }
+
+    public Double getRange() {
+        return range;
+    }
+
+    public void setRange(Double range) {
+        this.range = range;
     }
 
     @Override
