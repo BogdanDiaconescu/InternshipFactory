@@ -1,4 +1,4 @@
-package eu.accesa.part;
+package eu.accesa.enums;
 
 public enum EngineType {
     DIESEL,
