@@ -1,4 +1,4 @@
-package eu.accesa.enums;
+package eu.accesa.constatnts;
 
 public enum Parts {
     AIR_CONDITIONING,

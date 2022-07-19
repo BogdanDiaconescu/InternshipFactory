@@ -1,6 +1,6 @@
 package eu.accesa.part;
 
-import eu.accesa.enums.EngineType;
+import eu.accesa.constatnts.EngineType;
 
 public class Engine extends Part {
     private EngineType type;

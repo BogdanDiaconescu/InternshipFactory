@@ -1,6 +1,6 @@
 package eu.accesa.car;
 
-import eu.accesa.enums.Parts;
+import eu.accesa.constatnts.Parts;
 import eu.accesa.part.*;
 
 import java.util.HashMap;
