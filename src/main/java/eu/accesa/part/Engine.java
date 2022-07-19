@@ -1,6 +1,6 @@
 package eu.accesa.part;
 
-import eu.accesa.constatnts.EngineType;
+import eu.accesa.internshipfactory.constatnts.EngineType;
 
 public class Engine extends Part {
     private EngineType type;

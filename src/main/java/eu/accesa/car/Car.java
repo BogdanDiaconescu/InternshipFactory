@@ -1,6 +1,6 @@
 package eu.accesa.car;
 
-import eu.accesa.constatnts.Parts;
+import eu.accesa.internshipfactory.constatnts.Parts;
 import eu.accesa.part.*;
 
 import java.util.HashMap;

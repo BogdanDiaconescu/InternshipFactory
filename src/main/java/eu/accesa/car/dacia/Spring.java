@@ -1,6 +1,6 @@
 package eu.accesa.car.dacia;
 
-import eu.accesa.constatnts.EngineType;
+import eu.accesa.internshipfactory.constatnts.EngineType;
 import eu.accesa.part.Engine;
 import eu.accesa.part.Sensor;
 
