@@ -6,7 +6,7 @@ import java.time.temporal.ChronoUnit;
 public class SteelGenerator {
     private static LocalDateTime lastGenerated;
 
-    private static Double generate() {
+    public static Double generate() {
         LocalDateTime now = LocalDateTime.now();
         Long seconds = ChronoUnit.SECONDS.between(lastGenerated, now);
         if (seconds > 30) {
@@ -14,4 +14,5 @@ public class SteelGenerator {
         }
         return null;
     }
+
 }

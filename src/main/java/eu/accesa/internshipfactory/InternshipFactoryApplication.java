@@ -29,8 +29,11 @@ public class InternshipFactoryApplication {
         factory.initialize(stock);
         Sales sales = new Sales();
         sales.initialize(factory);
+
+        //sales zone
         BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
         boolean moreInput = true;
+
         while(moreInput){
             String text = console.readLine();
             if("q".equalsIgnoreCase(text)) {
