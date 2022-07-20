@@ -1,7 +1,11 @@
 package eu.accesa.factory;
 
-public class Factory {
-    // public void createCar()
+import eu.accesa.stock.Stock;
+import org.springframework.stereotype.Component;
 
-    //public void upgradeCar()
+@Component
+public class Factory {
+    public void initialize(Stock stock) {
+        System.out.println("factory");
+    }
 }
