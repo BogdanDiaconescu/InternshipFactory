@@ -1,5 +1,7 @@
 package eu.accesa.part;
 
+import java.util.Objects;
+
 public class SteeringWheel extends Part {
     private String shape;
 
@@ -24,4 +26,14 @@ public class SteeringWheel extends Part {
             throw new RuntimeException("SteeringWheel can be either Round or Yoke");
         }
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        SteeringWheel that = (SteeringWheel) o;
+        return Objects.equals(shape, that.shape);
+    }
+
 }

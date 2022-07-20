@@ -1,5 +1,7 @@
 package eu.accesa.part;
 
+import java.util.Objects;
+
 public class SunRoof extends Part {
     private Boolean electric;
 
@@ -20,4 +22,14 @@ public class SunRoof extends Part {
     public void setElectric(Boolean electric) {
         this.electric = electric;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        SunRoof sunRoof = (SunRoof) o;
+        return Objects.equals(electric, sunRoof.electric);
+    }
+
 }

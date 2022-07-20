@@ -8,4 +8,6 @@ public class Sensor extends Part {
     public Sensor(Sensor sensor) {
         super(sensor);
     }
+
+
 }

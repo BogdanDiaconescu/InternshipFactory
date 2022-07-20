@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 public class Stock {
 
+
     private Double actualSteel;
     private SteelGenerator steelGenerator;
     public void initialize() {
@@ -33,4 +34,5 @@ public class Stock {
             actualSteel-=neededSteel;
         }
     }
+
 }

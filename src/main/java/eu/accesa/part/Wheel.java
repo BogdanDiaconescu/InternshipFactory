@@ -1,5 +1,7 @@
 package eu.accesa.part;
 
+import java.util.Objects;
+
 public class Wheel extends Part {
 
     private Integer numberOfSpokes;
@@ -21,4 +23,14 @@ public class Wheel extends Part {
     public void setNumberOfSpokes(Integer numberOfSpokes) {
         this.numberOfSpokes = numberOfSpokes;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Wheel wheel = (Wheel) o;
+        return Objects.equals(numberOfSpokes, wheel.numberOfSpokes);
+    }
+
 }

@@ -1,5 +1,7 @@
 package eu.accesa.part;
 
+import java.util.Objects;
+
 public class AllWheelDrive extends Part{
     private Integer performance;
 
@@ -20,4 +22,14 @@ public class AllWheelDrive extends Part{
     public void setPerformance(Integer performance) {
         this.performance = performance;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        AllWheelDrive that = (AllWheelDrive) o;
+        return performance.equals(that.performance);
+    }
+
 }

@@ -1,5 +1,7 @@
 package eu.accesa.part;
 
+import java.util.Objects;
+
 public class Chassis extends Part {
 
     private Integer stiffness;
@@ -21,4 +23,14 @@ public class Chassis extends Part {
     public void setStiffness(Integer stiffness) {
         this.stiffness = stiffness;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Chassis chassis = (Chassis) o;
+        return stiffness.equals(chassis.stiffness);
+    }
+
 }

@@ -1,5 +1,7 @@
 package eu.accesa.part;
 
+import java.util.Objects;
+
 public class Seat extends Part {
     private Boolean heated;
     private Boolean manual;
@@ -42,4 +44,14 @@ public class Seat extends Part {
     public void setElectric(Boolean electric) {
         this.electric = electric;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Seat seat = (Seat) o;
+        return Objects.equals(heated, seat.heated) && Objects.equals(manual, seat.manual) && Objects.equals(electric, seat.electric);
+    }
+
 }

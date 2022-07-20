@@ -1,5 +1,7 @@
 package eu.accesa.part;
 
+import java.util.Objects;
+
 public class Brake extends Part {
     private Integer performance;
 
@@ -25,4 +27,14 @@ public class Brake extends Part {
         }
         this.performance = performance;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Brake brake = (Brake) o;
+        return performance.equals(brake.performance);
+    }
+
 }

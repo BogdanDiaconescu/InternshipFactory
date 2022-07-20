@@ -2,6 +2,8 @@ package eu.accesa.part;
 
 import eu.accesa.internshipfactory.constatnts.EngineType;
 
+import java.util.Objects;
+
 public class Engine extends Part {
     private EngineType type;
     private Long horsePower;
@@ -44,4 +46,14 @@ public class Engine extends Part {
     public void setCylinderCapacity(Double cylinderCapacity) {
         this.cylinderCapacity = cylinderCapacity;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Engine engine = (Engine) o;
+        return type == engine.type && horsePower.equals(engine.horsePower) && cylinderCapacity.equals(engine.cylinderCapacity);
+    }
+
 }
